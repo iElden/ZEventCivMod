@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="DisasterPanel" ColorSet="Beige_Black" FontStyle="Shadow">
+    <AlphaAnim ID="PopupAlphaIn" Size="parent,parent" AlphaBegin="0" AlphaEnd="1" Speed="3" Function="Root" Cycle="Once">
+        <SlideAnim ID="PopupSlideIn" Size="parent,parent" Start="0,-20" End="0,0" Speed="3" Function="Root" Cycle="Once">
+            <Grid Size="auto,auto" Anchor="C,B" Offset="0,0" Color="255,255,255,200" AutoSizePadding="25,25" ConsumeMouse="0">
+                <Grid ID="ZEGrid" Size="450,150" Anchor="C,C" Offset="-460,50" Style="WindowFrameHUD" AutoSizePadding="0,0">
+                    <Container ID="ZEContainer" Size="parent,auto" Hidden="0">
+                        <Stack ID="ZEStack" Size="parent,1000" Anchor="C,T" Offset="0,0" StackGrowth="Bottom" StackPadding="0">
+                            <Label ID="ZETitle" Anchor="C,T" Style="FontNormal14" Align="Left" WrapWidth="500" String="[COLOR_GREEN]ZEvent 2022[ENDCOLOR]" Offset="0,0"/>
+                            <!-- Main Menu -->
+                            <Container ID="Tab0" Hidden="0" Size="parent,1000">
+                                <Stack ID="WaveStack" Size="parent,1000" Anchor="C,T" Offset="0,10" StackGrowth="Right" StackPadding="0">
+                                    <GridButton ID="ButtonCat1" Style="ButtonControl" Align="Center" Anchor="C,C" String="Disaster" Size="100,40" Offset="10,0"/>
+                                    <GridButton ID="ButtonCat2" Style="ButtonControl" Align="Center" Anchor="C,C" String="Barbarian" Size="100,40" Offset="10,0"/>
+                                    <GridButton ID="ButtonCat3" Style="ButtonControl" Align="Center" Anchor="C,C" String="Map" Size="100,40" Offset="10,0"/>
+                                </Stack>
+                            </Container>
+                            <!-- Disaster -->
+                            <Container ID="Tab1" Hidden="1" Size="parent,1000">
+                                <Stack ID="Tab1Stack" Size="parent,1000" Anchor="C,T" Offset="0,0" StackGrowth="Bottom" StackPadding="0">
+                                    <Stack ID="WaveStack" Size="parent,1000" Anchor="C,T" Offset="0,10" StackGrowth="Right" StackPadding="0">
+                                        <Label ID="Disaster" Anchor="C,C" Style="FontNormal14" Align="Left" WrapWidth="500" String="Disaster" Offset="0,0"/>
+                                        <PullDown ID="DisasterTypeSelector" Anchor="C,C" Offset="0,0" Style="PullDownBlue" Size="260,24" ScrollThreshold="80" AutoSizePopUp="1"/>
+                                        <Label ID="TargetTileDisaster" Anchor="C,C" Style="FontNormal14" Align="Left" WrapWidth="500" String="TileID" Offset="0,0"/>
+                                        <Grid Style="EditTextArea" Size="70,30" Anchor="C,C" InnerPadding="6,6">
+                                            <EditBox ID="TileTargetIDDisaster" Anchor="C,T" Offset="0,0" Size="parent,23" EditMode="0" Style="BodyTextDark18" ColorSet="BodyTextCool"
+                                                     NumberInput="1" FontStyle="stroke" MaxLength="12"/>
+                                        </Grid>
+                                    </Stack>
+                                    <Stack ID="WaveStack" Size="parent,1000" Anchor="C,T" Offset="0,0" StackGrowth="Right" StackPadding="0">
+                                        <Label ID="Target" Anchor="C,C" Style="FontNormal14" Align="Left" WrapWidth="500" String="Target" Offset="0,0"/>
+                                        <PullDown ID="SpecialFeaturePullDown" Anchor="C,C" Offset="7,0" Style="PullDownBlue" Size="200,24" ScrollThreshold="50" AutoSizePopUp="1"
+                                                  SpaceForScroll="0"/>
+                                        <GridButton ID="ButtonFire" Style="ButtonRed" Align="Center" Anchor="C,C" String="Fire !" Size="100,40" Offset="10,0"/>
+                                    </Stack>
+                                    <GridButton ID="BackToMenu1" Style="ButtonControl" Align="Left" Anchor="L,C" String="Back" Size="100,40" Offset="00,0"/>
+                                </Stack>
+                            </Container>
+                            <!-- Barbarian -->
+                            <Container ID="Tab2" Hidden="1" Size="parent,1000">
+                                <Stack ID="Tab2Stack" Size="parent,1000" Anchor="C,T" Offset="0,0" StackGrowth="Bottom" StackPadding="0">
+                                    <Stack ID="WaveStack" Size="parent,1000" Anchor="C,T" Offset="0,10" StackGrowth="Right" StackPadding="0">
+                                        <Label ID="LabelUnit" Anchor="C,C" Style="FontNormal14" Align="Left" WrapWidth="500" String="Unit" Offset="0,0"/>
+                                        <PullDown ID="UnitTypeSelector" Anchor="C,C" Offset="5,0" Style="PullDownBlue" Size="210,24" ScrollThreshold="80" AutoSizePopUp="1"/>
+                                        <Label ID="LabelAs" Anchor="C,C" Style="FontNormal14" Align="Left" WrapWidth="500" String="as" Offset="5,0"/>
+                                        <PullDown ID="PlayerTypeSelector" Anchor="C,C" Offset="5,0" Style="PullDownBlue" Size="160,24" ScrollThreshold="80" AutoSizePopUp="1"/>
+                                    </Stack>
+                                    <Stack ID="WaveStack" Size="parent,1000" Anchor="C,T" Offset="0,0" StackGrowth="Right" StackPadding="0">
+                                        <Label ID="LabelTargetUnit" Anchor="C,C" Style="FontNormal14" Align="Left" WrapWidth="500" String="at x=" Offset="0,0"/>
+                                        <Grid Style="EditTextArea" Size="40,30" Anchor="C,C" InnerPadding="6,6">
+                                            <EditBox ID="TileTargetXUnit" Anchor="C,T" Offset="0,0" Size="parent,23" EditMode="0" Style="BodyTextDark18" ColorSet="BodyTextCool"
+                                                     NumberInput="1" FontStyle="stroke" MaxLength="3"/>
+                                        </Grid>
+                                        <Label ID="LabelTargetUnit" Anchor="C,C" Style="FontNormal14" Align="Left" WrapWidth="500" String="y=" Offset="0,0"/>
+                                        <Grid Style="EditTextArea" Size="40,30" Anchor="C,C" InnerPadding="6,6">
+                                            <EditBox ID="TileTargetYUnit" Anchor="C,T" Offset="0,0" Size="parent,23" EditMode="0" Style="BodyTextDark18" ColorSet="BodyTextCool"
+                                                     NumberInput="1" FontStyle="stroke" MaxLength="3"/>
+                                        </Grid>
+                                        <GridButton ID="ButtonSpawn" Style="ButtonConfirm" Align="Center" Anchor="C,C" String="Spawn" Size="100,40" Offset="10,0"/>
+                                        <GridButton ID="ButtonKillBarbarian" Style="ButtonRed" Align="Center" Anchor="C,C" String="Kill All Barbarians" Size="180,40" Offset="10,0"/>
+                                    </Stack>
+                                    <GridButton ID="BackToMenu2" Style="ButtonControl" Align="Left" Anchor="L,C" String="Back" Size="100,40" Offset="00,0"/>
+                                </Stack>
+                            </Container>
+                            <!-- Map -->
+                            <Container ID="Tab3" Hidden="1" Size="parent,1000">
+                                <Stack ID="Tab3Stack" Size="parent,1000" Anchor="C,T" Offset="0,10" StackGrowth="Bottom" StackPadding="0">
+                                    <GridButton ID="ButtonScout" Style="ButtonConfirm" Align="Left" Anchor="L,C" String="Reveal map to players" Size="200,40" Offset="00,0"/>
+                                    <GridButton ID="BackToMenu3" Style="ButtonControl" Align="Left" Anchor="L,C" String="Back" Size="100,40" Offset="0,10"/>
+                                </Stack>
+                            </Container>
+                        </Stack>
+                    </Container>
+                </Grid>
+            </Grid>
+        </SlideAnim>
+    </AlphaAnim>
+</Context>
